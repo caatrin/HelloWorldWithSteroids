@@ -28,7 +28,7 @@ public class Artist {
 	}
 
 	public void setName(String name) {
-		Log.e("CENSUS", "NAME CHANGED TO " + name);
+		Log.e("HELLO", "NAME CHANGED TO " + name);
 		this.name = name;
 	}
 	
@@ -37,7 +37,7 @@ public class Artist {
 	}
 
 	public void setDescription(String description) {
-		Log.e("CENSUS", "DESCRIPTION CHANGED TO " + description);
+		Log.e("HELLO", "DESCRIPTION CHANGED TO " + description);
 		this.description = description;
 	}
 

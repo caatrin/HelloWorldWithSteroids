@@ -2,12 +2,15 @@ package com.caatrin.hello;
 
 import java.util.ArrayList;
 
+import android.app.FragmentManager;
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 // The ListFragment displays a list of items in a 
@@ -28,18 +31,30 @@ public class FragmentArtistList extends ListFragment {
 		//getActivity().setTitle(R.string.fragment_contact_list_title);
 
 		// Get the ArrayList from AllContacts
-
 		artistList = AllArtists.get(getActivity()).getContactList();
-
 		ArtistAdapter contactAdapter = new ArtistAdapter(artistList);
 
 		// Provides the data for the ListView by setting the Adapter 
-
 		setListAdapter(contactAdapter);
-		
-		
-
 	}
+	
+
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		
+		Log.e("HELLO", "LIST ITEM CLICKED");
+	//	Artist clickedArtist = ((ArtistAdapter) getListAdapter()).getItem(position);
+
+		FragmentManager fm = getFragmentManager();
+        ArtistDetailsDialog artistDetailsDialog = new ArtistDetailsDialog();
+        
+       // artistDetailsDialog.getDialog().setTitle("Hello World");
+        
+      //  artistDetailsDialog.setT
+        artistDetailsDialog.show(fm, "fragment_dialog_artist_details");
+	}
+	
+
 
 	private class ArtistAdapter extends ArrayAdapter<Artist> {
 		
