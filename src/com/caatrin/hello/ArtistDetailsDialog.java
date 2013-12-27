@@ -6,22 +6,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class ArtistDetailsDialog extends DialogFragment {
 	
-	private TextView artistNameTextView;
+//	private TextView artistNameTextView;
 	private TextView artistDescriptionTextView;
 	
+	private String artistName;
+	private String artistDescription;
+	
+
+	public String getArtistName() {
+		return artistName;
+	}
+
+	public void setArtistName(String artistName) {
+		this.artistName = artistName;
+	}
+
+	public String getArtistDescription() {
+		return artistDescription;
+	}
+
+	public void setArtistDescription(String artistDescription) {
+		this.artistDescription = artistDescription;
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_dialog_artist_details, container);
+		getDialog().setTitle(getArtistName());
 		artistDescriptionTextView = (TextView) view.findViewById(R.id.descriptionTextView);
-		
+		artistDescriptionTextView.setText(getArtistDescription());
 		
 		Button okButton = (Button) view.findViewById(R.id.okButton);
 		okButton.setOnClickListener(new OnClickListener() {
@@ -31,22 +50,11 @@ public class ArtistDetailsDialog extends DialogFragment {
 				dismiss();
 			}
 		});
-		//getDialog().setTitle("Hello World");
-		
-		getDialog().setTitle("Hello World");
 		
 		return view;
 	}
 
 
-//	@Override
-//	public View getView() {
-//		// TODO Auto-generated method stub
-//		return super.getView();
-//	}
-	
-	
-	
 	
 	
 	

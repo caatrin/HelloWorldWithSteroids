@@ -43,10 +43,13 @@ public class FragmentArtistList extends ListFragment {
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		
 		Log.e("HELLO", "LIST ITEM CLICKED");
-	//	Artist clickedArtist = ((ArtistAdapter) getListAdapter()).getItem(position);
+		Artist clickedArtist = ((ArtistAdapter) getListAdapter()).getItem(position);
 
 		FragmentManager fm = getFragmentManager();
         ArtistDetailsDialog artistDetailsDialog = new ArtistDetailsDialog();
+        
+        artistDetailsDialog.setArtistName(clickedArtist.getName());
+        artistDetailsDialog.setArtistDescription(clickedArtist.getDescription());
         
        // artistDetailsDialog.getDialog().setTitle("Hello World");
         
