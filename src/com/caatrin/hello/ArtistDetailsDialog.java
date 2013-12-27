@@ -37,6 +37,7 @@ public class ArtistDetailsDialog extends DialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
 		View view = inflater.inflate(R.layout.fragment_dialog_artist_details, container);
 		getDialog().setTitle(getArtistName());
 		artistDescriptionTextView = (TextView) view.findViewById(R.id.descriptionTextView);
@@ -50,17 +51,19 @@ public class ArtistDetailsDialog extends DialogFragment {
 				dismiss();
 			}
 		});
-		
 		return view;
 	}
+	
+	@Override
+	public void onDestroyView() {
+		 if (getDialog() != null && getRetainInstance())
+		        getDialog().setDismissMessage(null);
+		    super.onDestroyView();
+	}
+	
+	
 
 
-	
-	
-	
-	
-	
-	
-	
+
 
 }

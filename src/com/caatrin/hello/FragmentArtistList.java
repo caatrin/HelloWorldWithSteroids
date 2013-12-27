@@ -1,6 +1,7 @@
 package com.caatrin.hello;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.app.FragmentManager;
 import android.app.ListFragment;
@@ -31,7 +32,7 @@ public class FragmentArtistList extends ListFragment {
 		//getActivity().setTitle(R.string.fragment_contact_list_title);
 
 		// Get the ArrayList from AllContacts
-		artistList = AllArtists.get(getActivity()).getContactList();
+		artistList = AllArtists.get(getActivity()).getArtistList();
 		ArtistAdapter contactAdapter = new ArtistAdapter(artistList);
 
 		// Provides the data for the ListView by setting the Adapter 
@@ -55,19 +56,13 @@ public class FragmentArtistList extends ListFragment {
         
       //  artistDetailsDialog.setT
         artistDetailsDialog.show(fm, "fragment_dialog_artist_details");
+        artistDetailsDialog.setRetainInstance(true);
 	}
 	
 
 
 	private class ArtistAdapter extends ArrayAdapter<Artist> {
-		
-		 // references to our images
-	    private Integer[] masterpieceIds = {
-	            R.drawable.ic_launcher,
-	            R.drawable.ic_launcher,
-	            R.drawable.ic_launcher
-	    };
-
+	
 		public ArtistAdapter(ArrayList<Artist> contacts) {
 
 			// An Adapter acts as a bridge between an AdapterView and the 
@@ -92,39 +87,39 @@ public class FragmentArtistList extends ListFragment {
 		// in the code that follows.
 		// ViewGroup is our ListView
 
+		
+		
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			// Check if this is a recycled list item and if not we inflate it
-
 			if(convertView == null){
-
 				convertView = getActivity().getLayoutInflater()
 						.inflate(R.layout.list_item_artist, null);
-
 			}
 
 			// Find the right data to put in the list item
-
 			Artist theArtist = getItem(position);
+			Random random = new Random();
+			int randomIcon = random.nextInt(Ipsum.masterpieceIds.length);
 
 			// Put the right data into the right components
-
 			TextView artistNameTextView = (TextView)convertView.findViewById(R.id.artist_name);
 			artistNameTextView.setText(theArtist.getName());
-
+			//artistNameTextView.setText(Ipsum.artistNames[position]);
+			
 			TextView artistDescriptionTextView = (TextView)convertView.findViewById(R.id.artist_description);
 			artistDescriptionTextView.setText(theArtist.getDescription().substring(0, 30) + "...");
 
 			ImageView masterpieceImageView = (ImageView) convertView.findViewById(R.id.masterpieceImageView);
-			masterpieceImageView.setImageResource(masterpieceIds[position]);
+			masterpieceImageView.setImageResource(Ipsum.masterpieceIds[randomIcon]);
 
 			// Return the finished list item for display
 			return convertView;
-
 		}
 
-
 	}
+	
+	
 
 }
