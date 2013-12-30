@@ -9,7 +9,6 @@ public class AllArtists {
 
 	// This class will only have one instance that will
 	// contain an arraylist with all artists in it.
-	// Singleton
 
 	private static AllArtists allArtists;
 
@@ -23,7 +22,6 @@ public class AllArtists {
 	// is allowed to access on the device.
 
 	private Context applicationContext;
-	// This ArrayList will hold all the Artists
 	private ArrayList<Artist> artistList;
 
 	private AllArtists(Context applicationContext){
@@ -34,15 +32,11 @@ public class AllArtists {
 		for (int i = 0; i< Ipsum.artistNames.length; i++) {
 			artistList.add(new Artist(Ipsum.artistNames[i], Ipsum.artistDescriptions[i]));
 		}
-
 	}
 
-	// Checks if an instance of allArtists exists. If it does
-	// the one instance is returned. Otherwise the instance is
-	// created.
-
 	public static AllArtists get(Context context){
-
+		// Checks if an instance of allArtists exists. If it does
+		// the one instance is returned. Otherwise the instance is created.
 		if(allArtists == null){
 			// getApplicationContext returns the global Application object
 			// This Context is global to every part of the application
@@ -61,9 +55,7 @@ public class AllArtists {
 				return theArtist;
 			}
 		}
-
 		return null;
-
 	}
 
 }
