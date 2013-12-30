@@ -1,19 +1,42 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
+    <style name="PurpleActionBar" parent="android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#9933CC</item>
+    </style>
+
+    <style name="PurplePopupMenu" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">#9933CC</item>
+    </style>
+
+    <style name="PurpleDropDownListView" parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">#9933CC</item>
+    </style>
+
+     <style name="DropDownNav.Myactionbar" parent="@android:style/Widget.Spinner.DropDown">
+        <item name="android:background">#9933CC</item>
+        <item name="android:popupBackground">#9933CC</item>
+        <item name="android:dropDownSelector">#9933CC</item>
+    </style>
+
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="MyAppTheme" parent="AppBaseTheme">
+        <item name="android:actionBarStyle">@style/PurpleActionBar</item>
+        <item name="android:popupMenuStyle">@style/PurplePopupMenu</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Myactionbar</item>
+        <item name="android:dropDownListViewStyle">@style/PurpleDropDownListView</item>
+        <!-- <item name="android:textColor">#CC0000</item> -->
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

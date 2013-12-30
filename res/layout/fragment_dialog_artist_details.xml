@@ -8,7 +8,8 @@
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="4dp" >
 
         <TextView
             android:id="@+id/descriptionTextView"
@@ -26,13 +27,17 @@
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="4dp" >
 
         <Button
             android:id="@+id/okButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#9933CC"
+            android:focusableInTouchMode="true"
+            android:padding="4dp"
             android:text="OK" />
 
     </TableRow>
