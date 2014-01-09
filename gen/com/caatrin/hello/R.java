@@ -27,6 +27,12 @@ public final class R {
         public static final int ic_picasso_threemusicians=0x7f020003;
         public static final int ic_vangogh_starrynight=0x7f020004;
         public static final int ic_vangogh_sunflowers=0x7f020005;
+        public static final int steroids_btn_default_disabled_focused_holo_light=0x7f020006;
+        public static final int steroids_btn_default_disabled_holo_light=0x7f020007;
+        public static final int steroids_btn_default_focused_holo_light=0x7f020008;
+        public static final int steroids_btn_default_holo_light=0x7f020009;
+        public static final int steroids_btn_default_normal_holo_light=0x7f02000a;
+        public static final int steroids_btn_default_pressed_holo_light=0x7f02000b;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f080006;
@@ -58,13 +64,11 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -79,12 +83,14 @@ public final class R {
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f060000;
-        public static final int DropDownNav_Myactionbar=0x7f060004;
+        public static final int Buttonsteroids=0x7f060004;
+        public static final int DropDownNav_Myactionbar=0x7f060006;
+        public static final int ImageButtonsteroids=0x7f060005;
         /**  Application theme. 
  <item name="android:textColor">#CC0000</item> 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int MyAppTheme=0x7f060005;
+        public static final int MyAppTheme=0x7f060007;
         public static final int PurpleActionBar=0x7f060001;
         public static final int PurpleDropDownListView=0x7f060003;
         public static final int PurplePopupMenu=0x7f060002;
