@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.view.Menu;
 
 public class ArtistListMainActivity extends Activity {
 
@@ -15,19 +14,13 @@ public class ArtistListMainActivity extends Activity {
 
 		FragmentManager fragManager = getFragmentManager();
 
-		// Check if the FragmentManager knows about the Fragment 
-		// id we refer to
-
+		// Check if the FragmentManager knows about the Fragment id we refer to
 		Fragment theFragment = fragManager.findFragmentById(R.id.fragmentContainer);
 
 		// Check if the Fragment was found
-
 		if(theFragment == null){
 
 			// If the Fragment wasn't found then we must create it
-			// We change this from ContactFragment, which we used 
-			// in CensusApp
-
 			theFragment = new FragmentArtistList();
 
 			// Creates and commits the Fragment transaction
@@ -36,7 +29,6 @@ public class ArtistListMainActivity extends Activity {
 
 			// add() gets the location to place the Fragment into and
 			// the Fragment itself.
-
 			fragManager.beginTransaction()
 			.add(R.id.fragmentContainer, theFragment)
 			.commit();

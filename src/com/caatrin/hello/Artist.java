@@ -18,9 +18,7 @@ public class Artist {
 		// 100 years, the probability of creating just one 
 		// duplicate would be about 50%
 		idNumber = UUID.randomUUID();
-		
 	}
-	
 	
 
 	public Artist(String name, String description) {
@@ -28,7 +26,6 @@ public class Artist {
 		this.description = description;
 		idNumber = UUID.randomUUID();
 	}
-
 
 
 	public String getName() {

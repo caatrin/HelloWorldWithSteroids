@@ -20,16 +20,12 @@ import android.widget.TextView;
 
 public class FragmentArtistList extends ListFragment {
 
-	// Stores the list of Contacts
-
+	// Stores the list of Artists
 	private ArrayList<Artist> artistList;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// Change the title for the current Activity
-		//getActivity().setTitle(R.string.fragment_contact_list_title);
 
 		// Get the ArrayList from AllContacts
 		artistList = AllArtists.get(getActivity()).getArtistList();
@@ -52,9 +48,6 @@ public class FragmentArtistList extends ListFragment {
         artistDetailsDialog.setArtistName(clickedArtist.getName());
         artistDetailsDialog.setArtistDescription(clickedArtist.getDescription());
         
-       // artistDetailsDialog.getDialog().setTitle("Hello World");
-        
-      //  artistDetailsDialog.setT
         artistDetailsDialog.show(fm, "fragment_dialog_artist_details");
         artistDetailsDialog.setRetainInstance(true);
 	}
@@ -73,7 +66,6 @@ public class FragmentArtistList extends ListFragment {
 			// resource being the simple_list_item and the ArrayList
 			// android.R.layout.simple_list_item_1 is a predefined 
 			// layout provided by Android that stands in as a default
-
 			super(getActivity(), android.R.layout.simple_list_item_1, contacts);
 		}
 
@@ -86,8 +78,6 @@ public class FragmentArtistList extends ListFragment {
 		// convertView is a pre-created list item that will be reconfigured 
 		// in the code that follows.
 		// ViewGroup is our ListView
-
-		
 		
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {

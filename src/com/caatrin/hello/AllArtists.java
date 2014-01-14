@@ -14,7 +14,7 @@ public class AllArtists {
 
 	// By creating a Context you gain access to the 
 	// current state of the complete application.
-	// With it you can get information about all the Activitys
+	// With it you can get information about all the Activities
 	// in the app among other things.
 
 	// By accessing the Context you control every part of
